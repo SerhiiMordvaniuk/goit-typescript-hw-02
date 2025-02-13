@@ -1,0 +1,40 @@
+.search {
+  width: 100%;
+  background-color: darkblue;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 4px 4px 5px rgb(2, 2, 95);
+  margin-bottom: 40px;
+}
+
+.form {
+  position: relative;
+}
+
+.input {
+  border-radius: 4px;
+  width: 272px;
+  height: 38px;
+  padding: 0;
+  outline: none;
+  border: 1px solid #808080;
+  padding-left: 40px;
+}
+
+.input:focus-within {
+  border: none;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 7px;
+  left: 39%;
+  transition: all 250ms;
+  &:active {
+    transform: scale(0.9);
+  }
+}

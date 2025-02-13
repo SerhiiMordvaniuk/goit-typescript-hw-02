@@ -1,0 +1,11 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  color: darkblue;
+  cursor: pointer;
+  border-bottom: 0 solid darkblue;
+  transition: all 150ms;
+  &:hover {
+    border-bottom-width: 2px;
+  }
+}
