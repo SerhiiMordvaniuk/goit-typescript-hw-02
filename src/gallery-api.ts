@@ -1,5 +1,4 @@
 import axios from "axios";
-import { Data } from "./App.types";
 
 const KEY = "1X6RII3RoeScRHg5if82ucbsdRGfgCmSu4y1o-_zRdE";
 

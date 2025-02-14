@@ -12,11 +12,3 @@ export type ModalInfo = {
   alt: string | undefined;
   alt_description?: string;
 };
-
-// export interface Information {
-//   total: number;
-//   total_pages: number;
-//   results: Gallery[];
-// }
-
-export type Data = {};
