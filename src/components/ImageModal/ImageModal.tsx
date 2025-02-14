@@ -1,7 +1,20 @@
 import Modal from "react-modal";
+import { Gallery } from "../../App.types";
 Modal.setAppElement("#root");
 
-const ImageModal = ({ modalIsOpen, closeModal, image, alt }) => {
+interface ImageModalProps {
+  closeModal: () => void;
+  modalIsOpen: boolean;
+  image: string | undefined;
+  alt: string | undefined;
+}
+
+const ImageModal = ({
+  modalIsOpen,
+  closeModal,
+  image,
+  alt,
+}: ImageModalProps) => {
   const styles = {
     content: {
       overflow: "hidden",

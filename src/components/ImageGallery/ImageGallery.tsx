@@ -1,8 +1,14 @@
 import React from "react";
 import s from "./ImageGallery.module.css";
 import ImageCard from "../ImageCard/ImageCard";
+import { Gallery, ModalInfo } from "../../App.types";
 
-const ImageGallery = ({ gallery, onClick }) => {
+interface ImageGalleryProps {
+  gallery: Gallery;
+  onClick: (params: ModalInfo) => void;
+}
+
+const ImageGallery = ({ gallery, onClick }: ImageGalleryProps) => {
   if (!gallery) {
     return;
   }

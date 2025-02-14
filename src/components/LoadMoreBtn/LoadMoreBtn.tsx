@@ -1,12 +1,17 @@
+import { Gallery } from "../../App.types";
 import s from "./LoadMoreBtn.module.css";
 
-const LoadMoreBtn = ({ setPage }) => {
+type LoadMoreBtnProps = {
+  handleLoadMore: () => void;
+};
+
+const LoadMoreBtn = ({ handleLoadMore }: LoadMoreBtnProps) => {
   return (
     <div>
       <button
         className={s.btn}
         onClick={() => {
-          setPage((prev) => prev + 1);
+          handleLoadMore();
         }}
       >
         {" "}

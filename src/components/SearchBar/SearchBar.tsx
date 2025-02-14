@@ -1,26 +1,38 @@
+import { FormEvent } from "react";
 import s from "./SearchBar.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { CiSearch } from "react-icons/ci";
 
-const SearchBar = ({ setQuery, clearImages, prevQuery }) => {
-  const hansleSubmit = (e) => {
+type SearchBarProps = {
+  setQuery: (arg: string) => void;
+  clearImages: () => void;
+  prevQuery: string;
+};
+
+const SearchBar = ({ setQuery, clearImages, prevQuery }: SearchBarProps) => {
+  const hansleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    let newQuery = e.target.elements.input.value;
+    const form = e.target as typeof e.target & {
+      elements: { input: { value: string } };
+      reset: () => void;
+    };
+    let newQuery: string = form.elements.input.value.trim();
     if (newQuery.trim() === "") {
       toast.error("Please, enter your query");
       return;
     } else if (newQuery.trim() === prevQuery) {
       toast.error("Please, enter new query");
-      e.target.elements.input.value = "";
+      form.reset();
       return;
     } else if (newQuery.length < 3) {
       toast.error("The query must be at least three letters long");
-      e.target.elements.input.value = "";
+      form.reset();
+
       return;
     } else {
       clearImages();
       setQuery(newQuery);
-      e.target.elements.input.value = "";
+      form.reset();
     }
   };
 
