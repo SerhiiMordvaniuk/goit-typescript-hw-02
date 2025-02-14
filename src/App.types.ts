@@ -18,3 +18,5 @@ export type ModalInfo = {
 //   total_pages: number;
 //   results: Gallery[];
 // }
+
+export type Data = {};
