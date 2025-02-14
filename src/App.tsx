@@ -8,7 +8,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageModal from "./components/ImageModal/ImageModal";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader/Loader";
-import { Gallery, Images, Information, ModalInfo } from "./App.types";
+import { Gallery, ModalInfo } from "./App.types";
 
 function App() {
   const [query, setQuery] = useState<string>("");
