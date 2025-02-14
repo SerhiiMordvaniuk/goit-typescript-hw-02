@@ -18,8 +18,6 @@ const fetchSearch = async (search: string, page: number) => {
   const { data }: FetchData = await axios.get(
     `https://api.unsplash.com/search/photos/?page=${page}&per_page=12&client_id=${KEY}&query=${search}`
   );
-  console.log(data);
-
   return data;
 };
 
