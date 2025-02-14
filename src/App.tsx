@@ -8,7 +8,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageModal from "./components/ImageModal/ImageModal";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader/Loader";
-import { Data, Gallery, ModalInfo } from "./App.types";
+import { Data, Gallery, Information, ModalInfo } from "./App.types";
 
 function App() {
   const [query, setQuery] = useState<string>("");
@@ -29,7 +29,7 @@ function App() {
         setLoadMore(false);
         setLoader(true);
         setError(false);
-        const data: Data = await fetchSearch(query, page);
+        const data: Information = await fetchSearch(query, page);
         if (!first) {
           setImages(data);
           setFirst(true);

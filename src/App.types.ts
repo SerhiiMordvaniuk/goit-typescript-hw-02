@@ -13,7 +13,7 @@ export type ModalInfo = {
   alt_description?: string;
 };
 
-export interface Data {
+export interface Information {
   total: number;
   total_pages: number;
   results: Gallery[];
