@@ -11,6 +11,7 @@ const fetchSearch = async (search: string, page: number) => {
     `https://api.unsplash.com/search/photos/?page=${page}&per_page=12&client_id=${KEY}&query=${search}`
   );
   return response.data;
+  return response;
 };
 
 export default fetchSearch;

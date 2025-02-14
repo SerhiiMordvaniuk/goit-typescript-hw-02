@@ -18,3 +18,17 @@ export interface Information {
   total_pages: number;
   results: Gallery[];
 }
+
+export interface Images {
+  id: string;
+  urls: {
+    regular: string;
+    small: string;
+  };
+  user: {
+    name: string;
+  };
+  likes: number;
+  description?: string;
+  alt_description?: string;
+}

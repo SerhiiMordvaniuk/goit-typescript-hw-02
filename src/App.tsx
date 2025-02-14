@@ -8,7 +8,7 @@ import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageModal from "./components/ImageModal/ImageModal";
 import toast, { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader/Loader";
-import { Gallery, Information, ModalInfo } from "./App.types";
+import { Gallery, Images, Information, ModalInfo } from "./App.types";
 
 function App() {
   const [query, setQuery] = useState<string>("");
@@ -20,7 +20,6 @@ function App() {
   const [modalImg, setModalImg] = useState<ModalInfo>();
   const [scroll, setScroll] = useState<boolean>(false);
   const [loadMore, setLoadMore] = useState<boolean>(false);
-  const [first, setFirst] = useState<boolean>(false);
 
   useEffect(() => {
     let totalPages = 0;
@@ -29,10 +28,9 @@ function App() {
         setLoadMore(false);
         setLoader(true);
         setError(false);
-        const data = await fetchSearch(query, page);
-        if (!first) {
+        const data: any = await fetchSearch(query, page);
+        if (!data) {
           setImages(data);
-          setFirst(true);
         } else {
           if (data === undefined) {
             return;
@@ -53,7 +51,7 @@ function App() {
                 position: "bottom-center",
               });
             }
-            // setImages((prev) => [...prev, ...data.results]);
+            setImages((prev) => [...prev, ...data.results]);
           }
         }
       } catch (error) {
@@ -63,7 +61,7 @@ function App() {
       }
     }
     fethGellery();
-  }, [query, page, first]);
+  }, [query, page]);
 
   useEffect(() => {
     if (scroll) {
